@@ -12,14 +12,11 @@ export const INITIAL_STATE: AppState = {
 export function counterReducer (state: AppState = INITIAL_STATE, action: Action): AppState {
   switch (action.type) {
     case ActionTypes.Increment:
-      state.counter++;
-      return {...state};
+      return {counter: state.counter+1};
     case ActionTypes.Decrement:
-      state.counter--;
-      return {...state};
+      return {counter: state.counter-1};
     case ActionTypes.Reset:
-      state.counter = 0;
-      return {...state};
+      return {counter: 0};
     default:
       return {...state};  
   }
